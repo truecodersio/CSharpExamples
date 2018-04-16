@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace CSharpExamples
 {
@@ -6,7 +8,7 @@ namespace CSharpExamples
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }

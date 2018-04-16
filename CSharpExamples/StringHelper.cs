@@ -1,10 +1,16 @@
-﻿using System;
-namespace CSharpExamples
+﻿namespace CSharpExamples
 {
-    public class StringHelper
+    public static class StringHelper
     {
-        public StringHelper()
+        public static bool IsValidEmail(this string email)
         {
+            // start with empty value
+            // return false;
+
+            // then build tests and watch fail
+
+            // then build code to pass your tests
+            return email.Contains("@");
         }
     }
 }
