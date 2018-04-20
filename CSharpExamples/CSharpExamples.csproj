@@ -8,4 +8,7 @@
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.4.3" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="User.cs" />
+  </ItemGroup>
 </Project>

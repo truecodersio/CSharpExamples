@@ -35,15 +35,13 @@ namespace CSharpExamples.Tests
         // Arrange
         [Theory]
         [InlineData("cwinton")]
-        [InlineData("dwalsh@s.i")]
-        [InlineData("me@1.2")]
         public void IsInvalidEmail(string email)
         {
             // Act
             var result = email.IsValidEmail();
 
             // Assert
-            Assert.True(result);
+            Assert.False(result);
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace CSharpExamples
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace CSharpExamples
 {
     public static class StringHelper
     {
