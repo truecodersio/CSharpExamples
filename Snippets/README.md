@@ -5,13 +5,13 @@
 * [Custom Get and Set](#custom-get-and-set)
 * [Day 3 Example Code](#day-3-example-code)
 * [Dictionaries](#dictionaries)
-* [Exceptions, Ref, and Out](#exceptions--ref--and-out)
+* [Exceptions Ref and Out](#exceptions-ref-and-out)
 * [Extension Methods](#extension-methods)
 * [Generics](#generics)
 * [IEnumerable](#ienumerable)
 * [Interfaces](#interfaces)
 * [Iteration vs. Recursion](#iteration-vs-recursion)
-* [Keyword: this](#keyword--this)
+* [Keyword This](#keyword-this)
 * [Lambdas](#lambdas)
 * [LINQ](#linq)
 * [Method Overloading](#method-overloading)
@@ -218,7 +218,7 @@ Console.WriteLine($"That number is the favorite of {person}");
 Console.Read();
 ```
 
-## Exceptions, Ref, and Out
+## Exceptions Ref and Out
 
 ```csharp
 class Program
@@ -453,7 +453,7 @@ class Program
 }
 ```
 
-## Keyword: this
+## Keyword This
 
 ```csharp
 class Program
