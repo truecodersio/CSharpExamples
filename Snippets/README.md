@@ -23,6 +23,7 @@ Table of Contents
 * [String Helper](#string-helper)
 * [Try Parse](#try-parse)
 * [xUnit Test Cases](#xunit-test-cases)
+* [String Interpolation](#string-interpolation)
 
 ## Abstract Class
 
@@ -845,6 +846,30 @@ namespace CSharpExamples.Tests
             // Assert
             Assert.Equal(expected, actual);
         }
+    }
+}
+```
+
+## String Interpolation
+
+```csharp
+class Testing
+{
+    public string Value { get; set; }
+
+    public override string ToString()
+    {
+        return $"You're a terrible person";
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var value = new Testing { Value = "Can't Stop the Feeling" };
+
+        Console.WriteLine($"My value: {value}");
     }
 }
 ```
