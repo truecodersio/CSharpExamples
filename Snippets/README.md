@@ -24,6 +24,7 @@ Table of Contents
 * [Try Parse](#try-parse)
 * [xUnit Test Cases](#xunit-test-cases)
 * [String Interpolation](#string-interpolation)
+* [Yield](#yield)
 
 ## Abstract Class
 
@@ -870,6 +871,18 @@ class Program
         var value = new Testing { Value = "Can't Stop the Feeling" };
 
         Console.WriteLine($"My value: {value}");
+    }
+}
+```
+
+## Yield
+
+```csharp
+static IEnumerable<string> GetStrings()
+{
+    for (var i = 0; i < 100; i++)
+    {
+        yield return $"{i}";
     }
 }
 ```
