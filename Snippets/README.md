@@ -26,6 +26,7 @@ Table of Contents
 * [String Interpolation](#string-interpolation)
 * [Yield](#yield)
 * [Dapper](#dapper)
+* [Binary Search](#binary-search)
 
 ## Abstract Class
 
@@ -931,6 +932,44 @@ namespace CSharpExamples
 
         public static int UpdateProduct(this IDbConnection conn, Product prod) =>
             conn.Execute("UPDATE product SET Name = @Name WHERE ProductId = @Id", prod);
+    }
+}
+```
+
+## Binary Search
+
+```csharp
+
+namespace CSharpExamples
+{
+    public static class SharedHelper
+    {
+        public static int BinarySearch(this int[] arr, int value)
+        {
+            var start = 0;
+            var end = arr.Length - 1;
+
+            while (start <= end)
+            {
+                var mid = (start + end) / 2;
+                var found = arr[mid];
+
+                if (found == value) { return mid; }
+                if (found < value) { start = mid + 1; }
+                else { end = mid - 1; }
+            }
+
+            return -1;
+        }
+    }
+
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            var value = new[] { 1, 2, 3, 4, 5 };
+            var index = value.BinarySearch(4);
+        }
     }
 }
 ```
