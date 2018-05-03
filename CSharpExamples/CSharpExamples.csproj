@@ -11,4 +11,7 @@
   <ItemGroup>
     <Compile Remove="User.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSharpExamples.Shared\CSharpExamples.Shared.csproj" />
+  </ItemGroup>
 </Project>

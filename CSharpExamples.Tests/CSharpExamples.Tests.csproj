@@ -14,5 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CSharpExamples\CSharpExamples.csproj" />
+    <ProjectReference Include="..\CSharpExamples.Shared\CSharpExamples.Shared.csproj" />
   </ItemGroup>
 </Project>
