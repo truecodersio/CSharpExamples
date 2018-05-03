@@ -25,6 +25,7 @@ Table of Contents
 * [xUnit Test Cases](#xunit-test-cases)
 * [String Interpolation](#string-interpolation)
 * [Yield](#yield)
+* [Dapper](#dapper)
 
 ## Abstract Class
 
@@ -883,6 +884,53 @@ static IEnumerable<string> GetStrings()
     for (var i = 0; i < 100; i++)
     {
         yield return $"{i}";
+    }
+}
+```
+
+## Dapper
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using Dapper;
+using MySql.Data.MySqlClient;
+
+namespace CSharpExamples
+{
+    class Program
+    {
+        private const string connString = "Server=myServerAddress;Database=myDataBase;Uid=myUsername;Pwd=myPassword;";
+
+        static void Main(string[] args)
+        {
+            using (var conn = new MySqlConnection(connString))
+            {
+                conn.Open();
+
+                var products = conn.GetProducts().ToList();
+
+                for (var i = 0; i < products.Count; i++)
+                {
+                    var prod = products[i];
+                    prod.Name = $"Product: {i + 1}";
+                    var rows = conn.UpdateProduct(prod);
+
+                    Console.WriteLine($"rows affected: {rows}");
+                }
+            }
+        }
+    }
+
+    public static class ProductSqlHelper
+    {
+        public static IEnumerable<Product> GetProducts(this IDbConnection conn) =>
+            conn.Query<Product>("SELECT *, ProductId as Id FROM product;");
+
+        public static int UpdateProduct(this IDbConnection conn, Product prod) =>
+            conn.Execute("UPDATE product SET Name = @Name WHERE ProductId = @Id", prod);
     }
 }
 ```
