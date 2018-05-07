@@ -20,9 +20,9 @@ namespace CSharpExamples
     {
         static void Main(string[] args)
         {
-            var value = new Testing { Value = "Can't Stop the Feeling" };
+            var value = new[] { 1, 2, 3, 4, 5 };
 
-            Console.WriteLine($"My value: {value}");
+            var index = value.BinarySearch(4);
         }
     }
 }
