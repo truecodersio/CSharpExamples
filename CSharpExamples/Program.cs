@@ -23,6 +23,8 @@ namespace CSharpExamples
             var value = new[] { 1, 2, 3, 4, 5 };
 
             var index = value.BinarySearch(4);
+
+            var game = new SnakeGame(70, 40);
         }
     }
 }
